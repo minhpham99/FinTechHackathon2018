@@ -25,8 +25,14 @@ public class supplier {
         this.workerList.put(bankAccount, newWorker);
     }
 
-    public void removeWorker(String bankAccount) { workerList.remove(bankAccount); }
+    public void removeWorker(String bankAccount) {
+        if(workerList.containsKey(bankAccount) == true) workerList.remove(bankAccount);
+        else System.out.print("Account number does not exist\n");
+    }
 
-    public boolean supplierVerified() {}
+    public boolean supplierVerified(boolean ageVerified, boolean payVerified, boolean paidOnTime) {
+
+        return false;
+    }
 
 }
