@@ -6,7 +6,6 @@ public class bank {
     private ArrayList<String> clients;
     private supplier workSource;
 
-
     /*
     private worker[] workers() {
         worker[] ws = new workers[clients.size()];
@@ -29,13 +28,14 @@ public class bank {
     }
 
     public void addClient(String bankAccount) {
+        if (clients.contain(bankAccount)) throw new RunTimeException("Client already in the list");
         clients.add(bankAccount);
     }
 
     public void removeClient(String bankAccount) {
         for(clients c: clients) {
             if(clients.contain(bankAccount)) clients.remove(bankAccount);
-            else System.out.println("Client does not exist in the list");
+            else throw new RunTimException("Client does not exist in the list");
         }
     }
 

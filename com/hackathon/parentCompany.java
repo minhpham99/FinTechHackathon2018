@@ -15,11 +15,12 @@ public class parentCompany {
 
     public void addSupplier(String name, String location) {
         supplier s = new supplier(name, location);
+        if (supplierList.containsKey(name)) throw new RunTimeException("Supplier already in the list");
         supplierList.put(name, s);
     }
 
     public void removeSupplier(String name) {
         if(supplierList.containsKey(name)) supplierList.remove(name);
-        else System.out.println("Supplier does not exist in the list");
+        else throw new RunTimeException("Supplier does not exist in the list");
     }
 }

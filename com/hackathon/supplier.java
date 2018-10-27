@@ -16,10 +16,7 @@ public class supplier {
         workerList = new HashMap<>();
         banks = new ArrayList<>();
     }
-
-    public void addBank(String name) {
-        banks.add(new bank(name));
-    }
+    public void addBank(String name) { banks.add(new bank(name)); }
 
 
     public String getName() { return supplierName; }
