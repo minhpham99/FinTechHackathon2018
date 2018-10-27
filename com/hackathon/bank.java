@@ -5,7 +5,6 @@ import java.util.*;
 public class bank {
     private ArrayList<String> clients;
     private supplier workSource;
-    private String name;
 
 
     /*
@@ -16,10 +15,9 @@ public class bank {
         }
     }
     */
+    public bank (String name) { this.name = name; }
 
-    public bank (String name) {
-        this.name = name;
-    }
+    public String getName() { return name; }
 
     public boolean clientCheck(String accNumber) {
         return (workSource.hasWorker(accNumber) && clients.contains(accNumber));
@@ -30,11 +28,16 @@ public class bank {
         return workSource.getWorker(accNumber);
     }
 
-    public String getName() {
-        return name;
+    public void addClient(String bankAccount) {
+        clients.add(bankAccount);
     }
 
-
+    public void removeClient(String bankAccount) {
+        for(clients c: clients) {
+            if(clients.contain(bankAccount)) clients.remove(bankAccount);
+            else System.out.println("Client does not exist in the list");
+        }
+    }
 
 
 
