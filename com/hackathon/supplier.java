@@ -7,12 +7,18 @@ public class supplier {
     private HashMap<String, worker> workerList;
     private String supplierName;
     private String supplierLocation;
+    private ArrayList<bank> banks;
 
 
     public supplier (String name, String location) {
         this.supplierName = name;
         this.supplierLocation = location;
         workerList = new HashMap<>();
+        banks = new ArrayList<>();
+    }
+
+    public void addBank(String name) {
+        banks.add(new bank(name));
     }
 
 
