@@ -31,7 +31,13 @@ public class supplier {
         else System.out.println("Bank account does not exist");
     }
 
+    public boolean hasWorker(String accNumber) {
+        return workerList.keySet().contains(accNumber);
+    }
 
+    public worker getWorker(String accNumber) {
+        return workerList.get(accNumber);
+    }
 
 
     // Verifications
