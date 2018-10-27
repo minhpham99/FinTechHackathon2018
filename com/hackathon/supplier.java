@@ -3,9 +3,8 @@ package com.hackathon;
 import java.util.*;
 
 public class supplier {
-                                                    // Removed worker from the class variables because the class doesn't want to be storing one single instance of a worker
+    private worker w;                    // need this for the verification
     protected HashMap<String, worker> workerList;
-//    protected int supplierID;                     // I don't think we need to have suppliers store their own ID, since they don't really care about their own ID
     private String supplierName;
     private String supplierLocation;
 
@@ -28,9 +27,13 @@ public class supplier {
         workerList.put(bankAccount, w);
     }
 
-    public void removeWorker(String bankAccount) { workerList.remove(bankAccount); }
+    public void removeWorker(String bankAccount) {
+        if(workerList.containsKey(bankAccount)) workerList.remove(bankAccount);
+        else System.out.println("Bank account does not exist");
+    }
 
     public boolean supplierVerified() {
+        if(w.overallVerity()) return true;
         return false;
     }
 
