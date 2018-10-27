@@ -1,19 +1,13 @@
 package com.hackathon;
 
 import java.util.*;
+import java.lang.*;
 
 public class bank {
     private ArrayList<String> clients;
     private supplier workSource;
+    private String name;
 
-    /*
-    private worker[] workers() {
-        worker[] ws = new workers[clients.size()];
-        for (int i = 0; i < clients.size(); i ++) {
-            ws[i] = workSource.
-        }
-    }
-    */
     public bank (String name) { this.name = name; }
 
     public String getName() { return name; }
@@ -28,17 +22,16 @@ public class bank {
     }
 
     public void addClient(String bankAccount) {
-        if (clients.contain(bankAccount)) throw new RunTimeException("Client already in the list");
+        if (clients.contains(bankAccount)) throw new RuntimeException("Client already in the list");
         clients.add(bankAccount);
     }
 
     public void removeClient(String bankAccount) {
-        for(clients c: clients) {
-            if(clients.contain(bankAccount)) clients.remove(bankAccount);
-            else throw new RunTimException("Client does not exist in the list");
+        for(String s: clients) {
+            if(clients.contains(bankAccount)) clients.remove(bankAccount);
+            else throw new RuntimeException("Client does not exist in the list");
         }
     }
-
 
 
 
