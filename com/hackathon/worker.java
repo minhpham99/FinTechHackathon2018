@@ -65,6 +65,12 @@ public class worker {
         return (ageVerified && payVerified && paidOnTime);
     }
 
+    public boolean ageVerity() { return  ageVerified; }
+
+    public boolean payVerity() { return payVerified; }
+
+    public boolean timeVerity() { return paidOnTime; }
+
 
 
 
